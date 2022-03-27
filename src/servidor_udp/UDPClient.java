@@ -62,8 +62,8 @@ public class UDPClient{
             }
             byte[] m = comando.getBytes();
             double v = .0;
-            String endereco = "127.0.0.1";
-            InetAddress aHost = InetAddress.getByName(endereco);
+            String hostServer = "127.0.0.1";
+            InetAddress aHost = InetAddress.getByName(hostServer);
             int serverPort = 6789;
             DatagramPacket request = new DatagramPacket(m, m.length, aHost, serverPort);
             aSocket.send(request);
