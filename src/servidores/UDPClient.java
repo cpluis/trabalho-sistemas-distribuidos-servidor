@@ -16,7 +16,7 @@ public class UDPClient {
             aSocket = new DatagramSocket();
             String aux = null;
             String comando = null;
-            Boolean controle = true;
+            Boolean controle = true; 
             while (controle == true) {
                 comando = pane.faceJotionPaneUDP();
                 if (comando == null || comando.trim().equalsIgnoreCase("")) {
