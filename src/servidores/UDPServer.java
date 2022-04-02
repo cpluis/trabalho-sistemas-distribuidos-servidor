@@ -36,19 +36,19 @@ public class UDPServer{
                 }
                 else if(recebidos[0].trim().equalsIgnoreCase("2")){
                     int multiplicacaoConvert = (Integer.parseInt(recebidos[1])*Integer.parseInt(recebidos[2]));
-                    ret = ("A multiplicação de "+recebidos[1]+" X "+recebidos[2]+" é : " +Integer.toString(multiplicacaoConvert)).getBytes(StandardCharsets.UTF_8);
+                    ret = ("A multiplicação de: "+recebidos[1]+" X "+recebidos[2]+" é : " +Integer.toString(multiplicacaoConvert)).getBytes(StandardCharsets.UTF_8);
                 }else if(recebidos[0].trim().equalsIgnoreCase("3")){
                     int valorFatorial = Integer.parseInt(recebidos[1]);
-                    ret = ("O fatorial é : " +fatorial(valorFatorial)).getBytes(StandardCharsets.UTF_8);
+                    ret = ("O fatorial do "+recebidos[1]+" é: " +fatorial(valorFatorial)).getBytes(StandardCharsets.UTF_8);
                 }else if(recebidos[0].trim().equalsIgnoreCase("4")){
                     int raiz = Integer.parseInt(recebidos[1]);
                     ret = ("A Raiz de "+raiz+" é : " +Math.sqrt(raiz)).getBytes(StandardCharsets.UTF_8);
                 }else if(recebidos[0].trim().equalsIgnoreCase("5")){
                     ret = ("O tamanho disponivel do disco é: " +informacoesDoC.getFreeSpace()*conversao).getBytes(StandardCharsets.UTF_8);
                 }else if(recebidos[0].trim().equalsIgnoreCase("6")){
-                    ret = ("IP do Servidor: " +request.getAddress()).getBytes(StandardCharsets.UTF_8);
+                    ret = ("O endereço IP do Cliente é: " +request.getAddress()).getBytes(StandardCharsets.UTF_8);
                 }else if(recebidos[0].trim().equalsIgnoreCase("7")){
-                    ret = ("Porta de Origem:" +request.getPort()).getBytes(StandardCharsets.UTF_8);
+                    ret = ("Porta de Origem: " +request.getPort()).getBytes(StandardCharsets.UTF_8);
                 }
 
                 DatagramPacket reply = new DatagramPacket(

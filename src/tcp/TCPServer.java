@@ -1,8 +1,8 @@
 package tcp;
 
-import java.net.*;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -51,7 +51,7 @@ class Connection extends Thread {
                 return "A multiplicação de "+recebido[1]+" X "+recebido[2]+" é: "+
                         String.valueOf(Integer.parseInt(recebido[1]) * Integer.parseInt(recebido[2]));
             }else if (recebido[0].equalsIgnoreCase("6")){
-                return "O endereço IP do Servidor é: "
+                return "O endereço IP do Cliente é: "
                         +clientSocket.getLocalAddress().toString();
             }else if (recebido[0].equalsIgnoreCase("5")){
                 File tamanhoEmDisco = new File("c:/");
